@@ -30,7 +30,6 @@ http {
     # Redirect HTTP to HTTPS
     server {
         listen 80;
-        server_name yourdomain.com;
 
         # Redirect all HTTP traffic to HTTPS
         return 301 https://$host$request_uri;
@@ -39,7 +38,6 @@ http {
     # HTTPS Server with SSL Termination
     server {
         listen 443 ssl;
-        server_name yourdomain.com;
 
         # Self-signed SSL certificate and key
         ssl_certificate /etc/nginx/ssl/self-signed.crt;
@@ -52,7 +50,7 @@ http {
 
         # Proxy settings
         location / {
-            proxy_pass http://127.0.0.1:8096;  # Forward to your backend on port 8096
+            proxy_pass http://127.0.0.1:8069;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
