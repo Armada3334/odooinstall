@@ -9,6 +9,8 @@ openssl req -new -x509 -key /etc/nginx/ssl/self-signed.key -out /etc/nginx/ssl/s
 chmod 600 /etc/nginx/ssl/self-signed.key
 chmod 644 /etc/nginx/ssl/self-signed.crt
 
+apt install nginx
+
 echo "user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
