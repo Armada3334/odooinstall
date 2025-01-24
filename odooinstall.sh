@@ -9,7 +9,8 @@ openssl req -new -x509 -key /etc/nginx/ssl/self-signed.key -out /etc/nginx/ssl/s
 chmod 600 /etc/nginx/ssl/self-signed.key
 chmod 644 /etc/nginx/ssl/self-signed.crt
 
-apt install nginx
+apt install nginx -y
+apt install wkhtmltopdf -y
 
 echo 'user www-data;
 worker_processes auto;
