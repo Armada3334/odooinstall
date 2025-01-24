@@ -11,7 +11,7 @@ chmod 644 /etc/nginx/ssl/self-signed.crt
 
 apt install nginx
 
-echo "user www-data;
+echo 'user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
 error_log /var/log/nginx/error.log;
@@ -60,7 +60,7 @@ http {
         }
     }
 }
-" > /etc/nginx/nginx.conf
+' > /etc/nginx/nginx.conf
 
 systemctl restart nginx
 
